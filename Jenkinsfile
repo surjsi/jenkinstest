@@ -1,9 +1,11 @@
 pipeline {
-    agent { docker { image 'gradle:4.8.1' } }
+    agent {
+        docker { image 'node:7-alpine' }
+    }
     stages {
-        stage('build') {
+        stage('Test') {
             steps {
-                sh 'gradle int build'
+                sh 'node --version'
             }
         }
     }
